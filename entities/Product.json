@@ -1,0 +1,67 @@
+{
+  "name": "Product",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Product name"
+    },
+    "sku": {
+      "type": "string",
+      "description": "Stock Keeping Unit / Barcode"
+    },
+    "category_id": {
+      "type": "string",
+      "description": "Reference to Category"
+    },
+    "description": {
+      "type": "string"
+    },
+    "purchase_price": {
+      "type": "number",
+      "description": "Cost price"
+    },
+    "selling_price": {
+      "type": "number",
+      "description": "MRP / Selling price"
+    },
+    "gst_rate": {
+      "type": "number",
+      "description": "GST percentage (5, 12, 18, 28)",
+      "default": 5
+    },
+    "hsn_code": {
+      "type": "string",
+      "description": "HSN code for GST"
+    },
+    "stock_quantity": {
+      "type": "number",
+      "default": 0
+    },
+    "low_stock_threshold": {
+      "type": "number",
+      "default": 10
+    },
+    "color": {
+      "type": "string"
+    },
+    "size": {
+      "type": "string"
+    },
+    "brand": {
+      "type": "string"
+    },
+    "image_url": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "sku",
+    "selling_price"
+  ]
+}

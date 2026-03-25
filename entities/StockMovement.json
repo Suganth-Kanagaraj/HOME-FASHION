@@ -1,0 +1,54 @@
+{
+  "name": "StockMovement",
+  "type": "object",
+  "properties": {
+    "product_id": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "movement_type": {
+      "type": "string",
+      "enum": [
+        "inward",
+        "outward",
+        "return",
+        "damaged",
+        "adjustment"
+      ],
+      "description": "Type of stock movement"
+    },
+    "quantity": {
+      "type": "number"
+    },
+    "reference_type": {
+      "type": "string",
+      "enum": [
+        "purchase",
+        "sale",
+        "return",
+        "manual"
+      ],
+      "description": "What caused this movement"
+    },
+    "reference_id": {
+      "type": "string",
+      "description": "ID of the related purchase/sale"
+    },
+    "previous_stock": {
+      "type": "number"
+    },
+    "new_stock": {
+      "type": "number"
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "product_id",
+    "movement_type",
+    "quantity"
+  ]
+}

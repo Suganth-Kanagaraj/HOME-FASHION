@@ -1,0 +1,45 @@
+{
+  "name": "Customer",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Customer full name"
+    },
+    "phone": {
+      "type": "string",
+      "description": "Mobile number"
+    },
+    "email": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "pincode": {
+      "type": "string"
+    },
+    "gstin": {
+      "type": "string",
+      "description": "Customer GSTIN if applicable"
+    },
+    "loyalty_points": {
+      "type": "number",
+      "default": 0
+    },
+    "total_purchases": {
+      "type": "number",
+      "default": 0
+    },
+    "notes": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "name",
+    "phone"
+  ]
+}

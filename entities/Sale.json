@@ -1,0 +1,143 @@
+{
+  "name": "Sale",
+  "type": "object",
+  "properties": {
+    "invoice_number": {
+      "type": "string",
+      "description": "Unique invoice number"
+    },
+    "customer_id": {
+      "type": "string",
+      "description": "Reference to Customer"
+    },
+    "customer_name": {
+      "type": "string"
+    },
+    "customer_phone": {
+      "type": "string"
+    },
+    "items": {
+      "type": "array",
+      "description": "Sale line items",
+      "items": {
+        "type": "object",
+        "properties": {
+          "product_id": {
+            "type": "string"
+          },
+          "product_name": {
+            "type": "string"
+          },
+          "sku": {
+            "type": "string"
+          },
+          "quantity": {
+            "type": "number"
+          },
+          "unit_price": {
+            "type": "number"
+          },
+          "gst_rate": {
+            "type": "number"
+          },
+          "gst_amount": {
+            "type": "number"
+          },
+          "discount": {
+            "type": "number"
+          },
+          "total": {
+            "type": "number"
+          }
+        }
+      }
+    },
+    "subtotal": {
+      "type": "number",
+      "description": "Total before tax and discount"
+    },
+    "discount_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "discount_percent": {
+      "type": "number",
+      "default": 0
+    },
+    "cgst_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "sgst_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "igst_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "total_gst": {
+      "type": "number"
+    },
+    "grand_total": {
+      "type": "number"
+    },
+    "payment_method": {
+      "type": "string",
+      "enum": [
+        "cash",
+        "upi",
+        "card",
+        "wallet",
+        "credit",
+        "mixed"
+      ],
+      "default": "cash"
+    },
+    "payment_status": {
+      "type": "string",
+      "enum": [
+        "paid",
+        "partial",
+        "pending"
+      ],
+      "default": "paid"
+    },
+    "amount_paid": {
+      "type": "number"
+    },
+    "balance_due": {
+      "type": "number",
+      "default": 0
+    },
+    "loyalty_points_earned": {
+      "type": "number",
+      "default": 0
+    },
+    "loyalty_points_redeemed": {
+      "type": "number",
+      "default": 0
+    },
+    "notes": {
+      "type": "string"
+    },
+    "sale_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "completed",
+        "returned",
+        "cancelled"
+      ],
+      "default": "completed"
+    }
+  },
+  "required": [
+    "invoice_number",
+    "items",
+    "grand_total"
+  ]
+}

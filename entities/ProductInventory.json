@@ -1,0 +1,49 @@
+{
+  "name": "ProductInventory",
+  "type": "object",
+  "properties": {
+    "product_id": {
+      "type": "string",
+      "description": "Reference to Product"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "location_id": {
+      "type": "string",
+      "description": "Reference to Location"
+    },
+    "location_name": {
+      "type": "string"
+    },
+    "quantity": {
+      "type": "number",
+      "default": 0
+    },
+    "reserved_quantity": {
+      "type": "number",
+      "default": 0,
+      "description": "Quantity reserved for pending orders"
+    },
+    "available_quantity": {
+      "type": "number",
+      "default": 0,
+      "description": "Available = Quantity - Reserved"
+    },
+    "reorder_point": {
+      "type": "number",
+      "default": 10
+    },
+    "max_stock_level": {
+      "type": "number",
+      "default": 100
+    }
+  },
+  "required": [
+    "product_id",
+    "location_id"
+  ]
+}

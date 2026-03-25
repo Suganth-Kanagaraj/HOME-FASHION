@@ -1,0 +1,74 @@
+{
+  "name": "Supplier",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Supplier/Company name"
+    },
+    "contact_person": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "state": {
+      "type": "string"
+    },
+    "pincode": {
+      "type": "string"
+    },
+    "gstin": {
+      "type": "string"
+    },
+    "pan": {
+      "type": "string"
+    },
+    "bank_name": {
+      "type": "string"
+    },
+    "bank_account": {
+      "type": "string"
+    },
+    "ifsc_code": {
+      "type": "string"
+    },
+    "payment_terms": {
+      "type": "string",
+      "enum": [
+        "immediate",
+        "7_days",
+        "15_days",
+        "30_days",
+        "45_days",
+        "60_days"
+      ],
+      "default": "30_days"
+    },
+    "total_purchases": {
+      "type": "number",
+      "default": 0
+    },
+    "outstanding_amount": {
+      "type": "number",
+      "default": 0
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "phone"
+  ]
+}

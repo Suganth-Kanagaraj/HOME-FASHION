@@ -1,0 +1,85 @@
+{
+  "name": "MarketingCampaign",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Campaign name"
+    },
+    "description": {
+      "type": "string"
+    },
+    "campaign_type": {
+      "type": "string",
+      "enum": [
+        "discount",
+        "loyalty_bonus",
+        "new_arrival",
+        "clearance",
+        "festival"
+      ],
+      "default": "discount"
+    },
+    "target_segment": {
+      "type": "string",
+      "description": "Customer segment to target"
+    },
+    "channel": {
+      "type": "string",
+      "enum": [
+        "whatsapp",
+        "sms",
+        "email",
+        "all"
+      ],
+      "default": "whatsapp"
+    },
+    "message": {
+      "type": "string",
+      "description": "Campaign message template"
+    },
+    "discount_percent": {
+      "type": "number",
+      "default": 0
+    },
+    "discount_code": {
+      "type": "string"
+    },
+    "start_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "end_date": {
+      "type": "string",
+      "format": "date"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "draft",
+        "scheduled",
+        "active",
+        "completed",
+        "cancelled"
+      ],
+      "default": "draft"
+    },
+    "target_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Number of customers targeted"
+    },
+    "sent_count": {
+      "type": "number",
+      "default": 0
+    },
+    "response_count": {
+      "type": "number",
+      "default": 0
+    }
+  },
+  "required": [
+    "name",
+    "campaign_type"
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "name": "StockAdjustment",
+  "type": "object",
+  "properties": {
+    "adjustment_number": {
+      "type": "string",
+      "description": "Unique adjustment reference number"
+    },
+    "product_id": {
+      "type": "string"
+    },
+    "product_name": {
+      "type": "string"
+    },
+    "sku": {
+      "type": "string"
+    },
+    "location_id": {
+      "type": "string"
+    },
+    "location_name": {
+      "type": "string"
+    },
+    "adjustment_type": {
+      "type": "string",
+      "enum": [
+        "add",
+        "remove"
+      ],
+      "description": "Type of adjustment"
+    },
+    "quantity": {
+      "type": "number",
+      "description": "Quantity adjusted (positive or negative)"
+    },
+    "previous_quantity": {
+      "type": "number"
+    },
+    "new_quantity": {
+      "type": "number"
+    },
+    "reason_code": {
+      "type": "string",
+      "enum": [
+        "damaged",
+        "expired",
+        "theft",
+        "found",
+        "correction",
+        "return",
+        "sample",
+        "other"
+      ],
+      "description": "Reason for adjustment"
+    },
+    "notes": {
+      "type": "string"
+    },
+    "adjustment_date": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "approved_by": {
+      "type": "string"
+    }
+  },
+  "required": [
+    "product_id",
+    "adjustment_type",
+    "quantity",
+    "reason_code"
+  ]
+}

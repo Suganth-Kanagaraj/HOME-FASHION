@@ -1,0 +1,43 @@
+{
+  "name": "Location",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Branch/Store name"
+    },
+    "code": {
+      "type": "string",
+      "description": "Location code (e.g., KR-MAIN, KR-WH)"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "store",
+        "warehouse",
+        "godown"
+      ],
+      "default": "store"
+    },
+    "address": {
+      "type": "string"
+    },
+    "city": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "manager": {
+      "type": "string"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "name",
+    "code"
+  ]
+}

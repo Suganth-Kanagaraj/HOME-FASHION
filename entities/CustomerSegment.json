@@ -1,0 +1,46 @@
+{
+  "name": "CustomerSegment",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Segment name (e.g., VIP, Regular, Inactive)"
+    },
+    "description": {
+      "type": "string"
+    },
+    "criteria": {
+      "type": "object",
+      "description": "Segmentation criteria",
+      "properties": {
+        "min_purchases": {
+          "type": "number"
+        },
+        "min_total_spent": {
+          "type": "number"
+        },
+        "min_loyalty_points": {
+          "type": "number"
+        },
+        "days_since_last_purchase": {
+          "type": "number"
+        }
+      }
+    },
+    "customer_count": {
+      "type": "number",
+      "default": 0
+    },
+    "color": {
+      "type": "string",
+      "description": "Display color for segment"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "required": [
+    "name"
+  ]
+}
